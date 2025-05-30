@@ -30,6 +30,9 @@ import { addTrustedIPCSender } from './trusted-ipc-sender'
 import { getUpdaterGUID } from '../lib/get-updater-guid'
 import { CLIAction } from '../lib/cli-action'
 
+/** Disable all automatic update checks */
+const DISABLE_AUTO_UPDATES = true
+
 export class AppWindow {
   private window: Electron.BrowserWindow
   private emitter = new Emitter()
@@ -429,6 +432,9 @@ export class AppWindow {
   }
 
   public async checkForUpdates(url: string) {
+    if (DISABLE_AUTO_UPDATES) {
+      return undefined
+    }
     try {
       autoUpdater.setFeedURL({ url: await trySetUpdaterGuid(url) })
       autoUpdater.checkForUpdates()

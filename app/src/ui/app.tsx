@@ -197,10 +197,14 @@ const HourInMilliseconds = MinuteInMilliseconds * 60
  */
 const UpdateCheckInterval = 4 * HourInMilliseconds
 
+
 /**
  * Send usage stats every 4 hours
  */
 const SendStatsInterval = 4 * HourInMilliseconds
+
+/** Disable all automatic update checks */
+const DISABLE_AUTO_UPDATES = true
 
 interface IAppProps {
   readonly dispatcher: Dispatcher
@@ -366,11 +370,12 @@ export class App extends React.Component<IAppProps, IAppState> {
 
     // We only want to automatically check for updates on beta and prod
     if (
+      !DISABLE_AUTO_UPDATES &&
       __RELEASE_CHANNEL__ !== 'development' &&
       __RELEASE_CHANNEL__ !== 'test'
     ) {
-      setInterval(() => undefined, Number.MAX_SAFE_INTEGER) // Disable the interval to avoid unnecessary checks
-      this.checkForUpdates(false)
+      setInterval(() => this.checkForUpdates(true), UpdateCheckInterval)
+      this.checkForUpdates(true)
     } else if (await updateStore.isUpdateShowcase()) {
       // The only purpose of this call is so we can see the showcase on dev/test
       // env. Prod and beta environment will trigger this during automatic check
