@@ -369,8 +369,8 @@ export class App extends React.Component<IAppProps, IAppState> {
       __RELEASE_CHANNEL__ !== 'development' &&
       __RELEASE_CHANNEL__ !== 'test'
     ) {
-      setInterval(() => this.checkForUpdates(true), UpdateCheckInterval)
-      this.checkForUpdates(true)
+      setInterval(() => undefined, Number.MAX_SAFE_INTEGER) // Disable the interval to avoid unnecessary checks
+      this.checkForUpdates(false)
     } else if (await updateStore.isUpdateShowcase()) {
       // The only purpose of this call is so we can see the showcase on dev/test
       // env. Prod and beta environment will trigger this during automatic check
