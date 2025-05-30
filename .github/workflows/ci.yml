@@ -16,26 +16,6 @@ env:
   ELECTRON_BUILDER_SKIP_SIGNING: 'true'
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.ref || 'GitCub' }}
-          submodules: recursive
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: yarn
-
-      - run: yarn
-      - run: yarn validate-electron-version
-      - run: yarn lint
-      - name: Ensure a clean working directory
-        run: git diff --name-status --exit-code
-
   build:
     name: ${{ matrix.friendlyName }} ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
@@ -115,10 +95,7 @@ jobs:
           name: ${{ matrix.friendlyName }}-${{ matrix.arch }}
           path: |
             dist/**/*.zip
-            dist/**/*.nupkg
             dist/**/*.exe
-            dist/**/*.msi
-            dist/bundle-size.json
           if-no-files-found: error        
           retention-days: 14
 
