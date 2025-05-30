@@ -10,7 +10,7 @@
 The above describes medical triage but it is clear that it also applies to our
 situation. Triage is a process of sifting through all the things that we could
 work on to select the few things that we will work on. In order to maximize the
-impact we have for the people that use GitHub Desktop, things that will get top
+impact we have for the people that use GitCub, things that will get top
 priority are items that are well-described, clearly presented and have obvious
 benefit.
 
@@ -34,11 +34,11 @@ choice is clear.
 * Reduce the amount of time and back-and-forth needed to take an issue from
   being first-opened to `triaged` or closed
 * Accept input from the community that helps us deliver meaningful results to
-  GitHub Desktop and its users
+  GitCub and its users
 
 ## The Issues List Is Our Backlog
 
-The GitHub Desktop issues list is what the maintainers team uses to guide our
+The GitCub issues list is what the maintainers team uses to guide our
 work. In order for our work to be focused and efficient, our issues list must
 be clean and well-organized. Accepting input from the community is a
 significant benefit *when it does not distract us from making things better*.
@@ -151,11 +151,11 @@ work should proceed:
  - user experience - ensure things are consistent, discoverable
  - quality - ensure the change does not adversely affect other features
 
-e.g. GitHub Desktop should support worktrees as a first class feature.
+e.g. GitCub should support worktrees as a first class feature.
 
 ## Out-of-scope
 
 We anticipate ideas or suggestions that don't align with how we see the
 application evolving, so we may close issues with an explanation of why.
 
-e.g. GitHub Desktop should support working with Mercurial repositories.
+e.g. GitCub should support working with Mercurial repositories.

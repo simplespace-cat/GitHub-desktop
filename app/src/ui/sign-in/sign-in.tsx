@@ -36,8 +36,8 @@ const DefaultTitle = 'Sign in'
 
 const browserSignInInfoContent = (
   <p>
-    Your browser will redirect you back to GitHub Desktop once you've signed in.
-    If your browser asks for your permission to launch GitHub Desktop, please
+    Your browser will redirect you back to GitCub once you've signed in.
+    If your browser asks for your permission to launch GitCub, please
     allow it.
   </p>
 )
