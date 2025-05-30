@@ -16,7 +16,6 @@ yarn build:prod
 yarn package
 ```
 
-
 ## Known Issues
 
 >These preferences will edit your global Git config file.
@@ -34,3 +33,7 @@ It’s a simple workaround—but it works.
 	# name = hub
 	# email = @mail
 ```
+
+## Windows
+
+Windows is untested and too much of a hassle to set up — feel free to submit a pull request.
