@@ -96,6 +96,10 @@ jobs:
           path: |
             dist/**/*.zip
             dist/**/*.exe
+            !dist/**/GitHubDesktop-*/**
+            !dist/**/*.msi
+            !dist/**/*.nupkg
+            !dist/**/bundle-size.json
           if-no-files-found: error        
           retention-days: 14
 
