@@ -152,7 +152,8 @@ function packageApp() {
     isPublishableBuild &&
     isGitHubActions() &&
     process.platform === 'darwin' &&
-    osxNotarize === undefined
+    osxNotarize === undefined &&
+    process.env.ELECTRON_BUILDER_SKIP_SIGNING !== 'true'
   ) {
     // we can't publish a mac build without these
     throw new Error(
